@@ -1,20 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================================================================
+  BASE */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
   color: #222;
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+main {
+  flex: 1;
+}
+
+/* =========================================================================
+  HEADER */
 
 .barra {
   background-color: #1496e0;
 }
 
-/* ===== HEADER ===== */
 .buscador input {
   max-width: 280px;
   margin: 0 auto;
@@ -25,17 +42,14 @@ body {
   width: auto;
 }
 
-.btn-whatsapp {
-  background-color: #25D366;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
+.bolsa_compra img {
+  height: 25px;
+  width: auto;
 }
 
-/* ===== NAV ===== */
+/* =========================================================================
+  NAVEGACIÓN Y MENÚ HAMBURGUESA */
+
 .nav-principal .nav-link {
   color: #222;
   font-weight: 600;
@@ -46,52 +60,37 @@ body {
   color: #1496e0;
 }
 
-/* ===== PIE DE PÁGINA (FOOTER) ===== */
-.pie {
-  background-color: #b9eaf1;
+.btn-menu {
+  display: none;
 }
 
-.redes-sociales img {
-  height: 25px;
-  width: auto;
+@media (max-width: 767.98px) {
+  .btn-menu {
+    display: block;
+    margin: 0 auto;
+    padding: 8px 20px;
+    background-color: #1496e0;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+  }
+
+  .nav-principal .nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .nav-principal .nav.activo {
+    display: flex;
+  }
 }
 
-.bolsa_compra img {
-  height: 25px;
-  width: auto;
-}
+/* =========================================================================
+  TARJETAS DE DESCUENTO */
 
-.columna-pie {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.titulo-seccion {
-  color: #1496e0;
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.pie p {
-  font-size: 0.95rem;
-  margin-bottom: 0;
-}
-
-.pie a {
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: #222;
-}
-
-.pie a:hover {
-  color: #1496e0;
-  text-decoration: none;
-}
-
-/* ===== TARJETAS DE DESCUENTO ===== */
 .tarjeta-descuento-ef,
 .tarjeta-descuento-deb, 
 .tarjeta-descuento-cuotas {
@@ -119,46 +118,34 @@ body {
 .tarjeta-descuento-ef .metodo, 
 .tarjeta-descuento-deb .metodo, 
 .tarjeta-descuento-cuotas .metodo {
-  font-family: serif;
-  font-size: 2.1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
   font-weight: 600;
 }
 
 .tarjeta-descuento-ef .porcentaje, 
 .tarjeta-descuento-deb .porcentaje, 
 .tarjeta-descuento-cuotas .porcentaje {
-  font-family: serif;
-  font-style: italic;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
   font-weight: 800;
-  font-size: 4.8rem;
-  line-height: 0.8;
+  font-size: 2.8rem;
+  line-height: 1;
   margin: 5px 0;
 }
 
 .tarjeta-descuento-ef .subtitulo, 
 .tarjeta-descuento-deb .subtitulo, 
 .tarjeta-descuento-cuotas .subtitulo {
-  font-family: serif;
-  font-size: 1.25rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
   font-weight: 300;
   margin-bottom: 0;
 }
 
-/* ===== CATÁLOGO Y GENERALES ===== */
-.importante {
-  color: red;
-}
+/* =========================================================================
+  PRODUCTOS */
 
-.beneficios_pagos h2, 
-.quienes_somos h2 {
-  text-align: center;
-}
-
-.beneficios_pagos li {
-  margin-bottom: auto;
-}
-
-/* ===== SECCIÓN Y GRILLA DE PRODUCTOS (ESTILO REFERENCIA E-COMMERCE) ===== */
 .tarjeta-producto {
   width: 100%;
   display: flex;
@@ -167,7 +154,6 @@ body {
   text-align: left;
 }
 
-/* Marco cuadrado uniforme */
 .imagen-wrap {
   position: relative;
   width: 100%;
@@ -183,6 +169,25 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease; 
+}
+
+.imagen-wrap:hover img {
+  transform: scale(1.05); 
+}
+
+.badge-mas-vendido {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .info-producto {
@@ -204,20 +209,168 @@ body {
   margin-bottom: 0;
 }
 
-.badge-mas-vendido {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background-color: #000000;
-  color: #ffffff;
-  font-size: 0.75rem;
+/* =========================================================================
+  BOTÓN AGREGAR AL CARRITO */
+
+.btn-agregar {
+  background-color: #1ba4e8;
+  color: #fff;
   font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+}
+
+.btn-agregar:hover {
+  background-color: #1078ac;
+  color: #fff;
+}
+
+.btn-agregar.agregado {
+  background-color: #2e9e5b;
+}
+
+/* =========================================================================
+  PÁGINAS DE CATEGORÍAS (MENÚ LATERAL Y TÍTULOS DE SECCIÓN) */
+
+@media (min-width: 768px) {
+  aside {
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+  }
+}
+
+.btn-desplegar-sub {
+  background: none;
+  border: none;
+  color: #1496e0;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 6px;
+  line-height: 1;
+}
+
+.btn-desplegar-sub:hover {
+  color: #1078ac;
+}
+
+.btn-desplegar-sub[aria-expanded="true"] .icono-toggle::before {
+  content: "-";
+}
+
+.btn-desplegar-sub[aria-expanded="false"] .icono-toggle::before {
+  content: "+";
+}
+
+.titulo-seccion-principal {
+  border-top: 2px solid #e0e0e0;
+  padding-top: 30px;
+  margin-top: 40px;
+}
+
+main h3:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* =========================================================================
+  PÁGINAS DE TEXTO (QUIÉNES SOMOS / BENEFICIOS Y PAGOS) */
+
+.beneficios_pagos h2, 
+.quienes_somos h2 {
+  text-align: center;
+}
+
+.beneficios_pagos li {
+  margin-bottom: auto;
 }
 
 .quienes_somos, .beneficios_pagos {
   text-align: justify;
+}
+
+/* =========================================================================
+  PIE DE PÁGINA */
+
+.pie {
+  background-color: #b9eaf1;
+}
+
+.redes-sociales img {
+  height: 25px;
+  width: auto;
+}
+
+.columna-pie {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.titulo-seccion {
+  color: #1496e0;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.pie p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.pie a, .info a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #222;
+}
+
+.info a {
+  text-decoration: none;
+  font-weight: normal; 
+  color: #222;         
+}
+
+.pie a:hover {
+  color: #1496e0;
+  text-decoration: none;
+}
+
+.info a:hover {
+  color: #1496e0;      
+  text-decoration: none;
+}
+
+/* =========================================================================
+   BOTÓN VOLVER ARRIBA */
+
+.btn-scroll-top {
+  position: fixed;
+  bottom: 20px;
+  left: 50vw;
+  margin-left: -20px; 
+  width: 40px;
+  height: 40px;
+  background-color: #1ba4e8; 
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  text-decoration: none;
+  opacity: 0.4;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.btn-scroll-top.visible {
+  visibility: visible;
+}
+
+.btn-scroll-top:hover {
+  opacity: 1;
+  background-color: #1078ac;
 }
