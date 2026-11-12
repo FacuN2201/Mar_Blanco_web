@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dormitorio - Mar Blanco</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="recursos/style.css">
 </head>
 <body>
@@ -12,18 +12,16 @@
   <!-- Franja superior -->
   <div class="barra container-fluid py-2"></div>
 
-  <!-- Header adaptable con Sistema de Grillas -->
+  <!-- Header -->
   <header class="header-principal container py-3">
     <div class="row align-items-center">
 
-      <!-- Buscador -->
       <div class="col-12 col-md-4 text-center text-md-left">
         <div class="buscador">
-          <input type="search" class="form-control" placeholder="Buscar producto...">
+          <input type="search" id="buscador" class="form-control" placeholder="Buscar en esta sección...">
         </div>
       </div>
 
-      <!-- Logo -->
       <div class="col-12 col-md-4 text-center mb-3 mb-md-0">
         <a href="index.html" class="logo d-inline-block">
           <img src="img/logo/logo_completo.png" alt="Mar Blanco - Blanquería y decoración" class="img-fluid">
@@ -39,7 +37,8 @@
   
   <!-- Navegación principal -->
   <nav class="nav-principal container-fluid px-0 my-2">
-    <ul class="nav justify-content-center border-top border-bottom py-2">
+    <button type="button" id="btn-menu" class="btn-menu">☰ Menú</button>
+    <ul id="menu-principal" class="nav justify-content-center border-top border-bottom py-2">
       <li class="nav-item mx-2"><a href="index.html" class="nav-link px-2">Inicio</a></li>
       <li class="nav-item mx-2"><a href="ambiente.html" class="nav-link px-2">Ambiente</a></li>
       <li class="nav-item mx-2"><a href="bano.html" class="nav-link px-2">Baño</a></li>
@@ -51,58 +50,1481 @@
     </ul>
   </nav>
 
-  <!-- Contenido principal extendido a los bordes -->
+  <!-- Contenido principal -->
   <main class="container-fluid px-3 px-md-5 my-4">
     <div class="row">
 
-      <!-- Columna Izquierda: Título + Categorías -->
       <aside class="col-12 col-md-3 col-lg-2 text-left mb-4 mb-md-0">
         
-        <!-- Ruta de navegación y Título a la izquierda -->
-        <small class="d-block mb-1" style="font-size: 0.75rem;">INICIO / DORMITORIO</small>
-        <h2 class="mb-4">Dormitorio</h2>
+        <small class="d-block mb-1" style="font-size: 0.75rem; font-weight:bold">INICIO / DORMITORIO</small>
+        <h2 class="mb-4" style="font-weight:bold; color: #1ba4e8;">Dormitorio</h2>
 
-        <!-- Lista de Subcategorías -->
         <div class="subcategorias">
-          <p class="mb-2"><a href="#" class="text-dark"></a></p>
-          <p class="mb-2"><a href="#" class="text-dark"></a></p>
-          <p class="mb-2"><a href="#" class="text-dark"></a></p>
-          <p class="mb-2"><a href="#" class="text-dark"></a></p>
+          <p class="mb-2"><a href="#almohadas" class="text-dark">Almohadas</a></p>
+          <p class="mb-2"><a href="#cubrecamas" class="text-dark">Cubrecamas</a></p>
+          
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <a href="#cubrecolchon" class="text-dark">Cubrecolchón</a>
+            <button class="btn-desplegar-sub" type="button" data-bs-toggle="collapse" data-bs-target="#subCubrecolchon" aria-expanded="false" aria-controls="subCubrecolchon">
+              <span class="icono-toggle"></span>
+            </button>
+          </div>
+
+          <div class="collapse ps-3 border-start ms-1 mb-2" id="subCubrecolchon">
+            <div class="d-flex flex-column gap-2">
+              <a href="#cc_ajustable" class="text-dark" style="font-size: 0.9rem;">Ajustable</a>
+              <a href="#cc_elastizado" class="text-dark" style="font-size: 0.9rem;">Elastizado</a>
+              <a href="#cc_impermeable" class="text-dark" style="font-size: 0.9rem;">Impermeable</a>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <a href="#cubresommier" class="text-dark">Cubresommier</a>
+            <button class="btn-desplegar-sub" type="button" data-bs-toggle="collapse" data-bs-target="#subCubresommier" aria-expanded="false" aria-controls="subCubresommier">
+              <span class="icono-toggle"></span>
+            </button>
+          </div>
+
+          <div class="collapse ps-3 border-start ms-1 mb-2" id="subCubresommier">
+            <div class="d-flex flex-column gap-2">
+              <a href="#cs_elastizado" class="text-dark" style="font-size: 0.9rem;">Elastizado</a>
+              <a href="#cs_color" class="text-dark" style="font-size: 0.9rem;">Elastizado color</a>
+              <a href="#cs_faldon" class="text-dark" style="font-size: 0.9rem;">Faldón</a>
+            </div>
+          </div>
+
+          <p class="mb-2"><a href="#protector" class="text-dark">Protector de colchón</a></p>
+          
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <a href="#sabanas" class="text-dark">Sábanas</a>
+            <button class="btn-desplegar-sub" type="button" data-bs-toggle="collapse" data-bs-target="#subSabanas" aria-expanded="false" aria-controls="subSabanas">
+              <span class="icono-toggle"></span>
+            </button>
+          </div>
+
+          <div class="collapse ps-3 border-start ms-1 mb-2" id="subSabanas">
+            <div class="d-flex flex-column gap-2">
+              <a href="#1pl" class="text-dark" style="font-size: 0.9rem;">1 1/2 plazas</a>
+              <a href="#twin" class="text-dark" style="font-size: 0.9rem;">Twin</a>
+              <a href="#2pl" class="text-dark" style="font-size: 0.9rem;">2 1/2 plazas o Full</a>
+              <a href="#queen" class="text-dark" style="font-size: 0.9rem;">Queen</a>
+              <a href="#king" class="text-dark" style="font-size: 0.9rem;">King</a>
+              <a href="#ajustables" class="text-dark" style="font-size: 0.9rem;">Ajustables</a>
+            </div>
+          </div>
         </div>
 
       </aside>
 
-      <!-- Columna Derecha: Fotos de Productos distribuidas a lo ancho -->
       <section class="productos col-12 col-md-9 col-lg-10">
-        
-        <h2 class="mb-4"></h2>
+
+        <h3 id="almohadas" class="titulo-seccion-principal mb-3" style="font-weight:bold">Almohadas</h3>
         <div class="row">
 
           <div class="col-6 col-md-3 mb-4">
             <div class="tarjeta-producto">
               <div class="imagen-wrap">
-                <img src="img/" alt="">
+                <img src="img/dormitorio/almohadas/bamboo.jpg" alt="Bamboo 70x40">
               </div>
               <div class="info-producto">
-                <h4 class="titulo-producto"></h4>
-                <p class="precio-producto"></p>
+                <h4 class="titulo-producto">Bamboo 70x40</h4>
+                <p class="precio-producto">$23300</p>
               </div>
             </div>
           </div>
 
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/almohadas/funda_Danubio.jpg" alt="Funda almohada Danubio">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Funda almohada Danubio</h4>
+                <p class="precio-producto">$7900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/almohadas/nasa.png" alt="Nasa">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Nasa</h4>
+                <p class="precio-producto">$41200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/almohadas/nasa_cervical.jpg" alt="Nasa cervical">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Nasa cervical</h4>
+                <p class="precio-producto">$41200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/almohadas/passenger.jpg" alt="Passenger">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Passenger</h4>
+                <p class="precio-producto">$38300</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/almohadas/softly.jpg" alt="Softly 70x40">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Softly 70x40</h4>
+                <p class="precio-producto">$15750</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/almohadas/suave.jpg" alt="Suave 70X40">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Suave 70X40</h4>
+                <p class="precio-producto">$21900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/almohadas/suplesa_Danubio.jpg" alt="Suplesa Danubio">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Suplesa Danubio</h4>
+                <p class="precio-producto">$22100</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/almohadas/triangulo.jpg" alt="Triangulo">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Triangulo</h4>
+                <p class="precio-producto">$42900</p>
+              </div>
+            </div>
+          </div>
         </div>
         
+        <h3 id="cubrecamas" class="titulo-seccion-principal mb-3" style="font-weight:bold">Cubrecamas</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecamas/Kavanagh_estampado_queen.jpg" alt="Quilt Kavanagh estampado queen">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Quilt Kavanagh estampado queen</h4>
+                <p class="precio-producto">$67300</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecamas/Kavanagh_estampado_twin.jpg" alt="Quilt Kavanagh estampado twin">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Quilt Kavanagh estampado twin</h4>
+                <p class="precio-producto">$47900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecamas/Kavanagh_portofino_1pl.webp" alt="Quilt Kavanagh Portofino 1pl">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Quilt Kavanagh Portofino 1pl</h4>
+                <p class="precio-producto">$27500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecamas/Kavanagh_portofino_2pl.jpg" alt="Quilt Kavanagh Portofino 2pl">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Quilt Kavanagh Portofino 2pl</h4>
+                <p class="precio-producto">$37500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecamas/Kavanagh_twin.webp" alt="Quilt Kavanagh Solvang twin">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Quilt Kavanagh Solvang twin</h4>
+                <p class="precio-producto">$56100</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="cubrecolchon" class="titulo-seccion-principal mb-3" style="font-weight:bold">Cubrecolchón</h3>
+        <h3 id="cc_ajustable" class="mb-3">Ajustable</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/ajustable.jpg" alt="1 pl. (80cm)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">1 pl. (80cm)</h4>
+                <p class="precio-producto">$28500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/ajustable.jpg" alt="1 1/2 pl. (90cm)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">1 1/2 pl. (90cm)</h4>
+                <p class="precio-producto">$30500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/ajustable.jpg" alt="Twin (1mt)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Twin (1mt)</h4>
+                <p class="precio-producto">$34600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/ajustable.jpg" alt="2 pl. (1.40mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">2 pl. (1.40mts)</h4>
+                <p class="precio-producto">$40500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/ajustable_cama.jpg" alt="2 1/2 pl. (1.50mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">2 1/2 pl. (1.50mts)</h4>
+                <p class="precio-producto">$42500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/ajustable_cama.jpg" alt="Queen (1.60mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Queen (1.60mts)</h4>
+                <p class="precio-producto">$45500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/ajustable_cama.jpg" alt="King (1.80mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">King (1.80mts)</h4>
+                <p class="precio-producto">$49500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/ajustable_cama.jpg" alt="Súper king (2mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Súper king (2mts)</h4>
+                <p class="precio-producto">$52600</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <h3 id="cc_elastizado" class="mb-3">Elastizado</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/elastizado.jpg" alt="1 pl. (80cm)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">1 pl. (80cm)</h4>
+                <p class="precio-producto">$22500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/elastizado.jpg" alt="1 1/2 pl. (90cm)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">1 1/2 pl. (90cm)</h4>
+                <p class="precio-producto">$21800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/elastizado.jpg" alt="Twin (1mt)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Twin (1mt)</h4>
+                <p class="precio-producto">$25300</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/elastizado.jpg" alt="2 pl. (1.40mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">2 pl. (1.40mts)</h4>
+                <p class="precio-producto">$30400</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/elastizado_cama.webp" alt="2 1/2 pl. (1.50mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">2 1/2 pl. (1.50mts)</h4>
+                <p class="precio-producto">$32000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/elastizado_cama.webp" alt="Queen (1.60mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Queen (1.60mts)</h4>
+                <p class="precio-producto">$24100</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/elastizado_cama.webp" alt="King (1.80mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">King (1.80mts)</h4>
+                <p class="precio-producto">$37600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/elastizado_cama.webp" alt="Súper king (2mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Súper king (2mts)</h4>
+                <p class="precio-producto">$41000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="cc_impermeable" class="mb-3">Impermeable</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/impermeable.jpg" alt="1 pl. (80cm)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">1 pl. (80cm)</h4>
+                <p class="precio-producto">$29500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/impermeable.jpg" alt="1 1/2 pl. (90cm)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">1 1/2 pl. (90cm)</h4>
+                <p class="precio-producto">$31000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/impermeable.jpg" alt="Twin (1mt)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Twin (1mt)</h4>
+                <p class="precio-producto">$35500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/impermeable.jpg" alt="2 pl. (1.40mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">2 pl. (1.40mts)</h4>
+                <p class="precio-producto">$41500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/impermeable_cama.webp" alt="2 1/2 pl. (1.50mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">2 1/2 pl. (1.50mts)</h4>
+                <p class="precio-producto">$43500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/impermeable_cama.webp" alt="Queen (1.60mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Queen (1.60mts)</h4>
+                <p class="precio-producto">$46600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubrecolchon/impermeable_cama.webp" alt="Súper king (2mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Súper king (2mts)</h4>
+                <p class="precio-producto">$54500</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="cubresommier" class="titulo-seccion-principal mb-3" style="font-weight:bold">Cubresommier</h3>
+        <h3 id="cs_elastizado" class="mb-3">Elastizado</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/elastizado.jpeg" alt="1 1/2 pl. (90cm)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">1 1/2 pl. (90cm)</h4>
+                <p class="precio-producto">$19400</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/elastizado.jpeg" alt="Twin (1mt)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Twin (1mt)</h4>
+                <p class="precio-producto">$22000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/elastizado.jpeg" alt="2 pl. (1.40mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">2 pl. (1.40mts)</h4>
+                <p class="precio-producto">$23200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/elastizado.jpeg" alt="2 1/2 pl. (1.50mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">2 1/2 pl. (1.50mts)</h4>
+                <p class="precio-producto">$24500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/elastizado.jpeg" alt="Queen (1.60mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Queen (1.60mts)</h4>
+                <p class="precio-producto">$25800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/elastizado.jpeg" alt="King (1.80mts y 2mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">King (1.80mts y 2mts)</h4>
+                <p class="precio-producto">$26800</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="cs_color" class="mb-3">Elastizado color</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/elastizado_color.jpeg" alt="1 1/2 pl. (90cm)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">1 1/2 pl. (90cm)</h4>
+                <p class="precio-producto">$14500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/elastizado_color.jpeg" alt="Twin (1mt)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Twin (1mt)</h4>
+                <p class="precio-producto">$16500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/elastizado_color.jpeg" alt="2 pl. (1.40mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">2 pl. (1.40mts)</h4>
+                <p class="precio-producto">$18900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/elastizado_color.jpeg" alt="2 1/2 pl. (1.50mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">2 1/2 pl. (1.50mts)</h4>
+                <p class="precio-producto">$21000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/elastizado_color.jpeg" alt="Queen (1.60mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Queen (1.60mts)</h4>
+                <p class="precio-producto">$22500</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="cs_faldon" class="mb-3">Faldón</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/faldon.jpeg" alt="1 1/2 pl. (90cm)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">1 1/2 pl. (90cm)</h4>
+                <p class="precio-producto">$23500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/faldon.jpeg" alt="Twin (1mt)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Twin (1mt)</h4>
+                <p class="precio-producto">$25500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/faldon.jpeg" alt="2 pl. (1.40mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">2 pl. (1.40mts)</h4>
+                <p class="precio-producto">$26000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/faldon.jpeg" alt="2 1/2 pl. (1.50mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">2 1/2 pl. (1.50mts)</h4>
+                <p class="precio-producto">$27500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/faldon.jpeg" alt="Queen (1.60mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Queen (1.60mts)</h4>
+                <p class="precio-producto">$31000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/cubresommier/faldon.jpeg" alt="King (1.80mts y 2mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">King (1.80mts y 2mts)</h4>
+                <p class="precio-producto">$35000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="protector" class="titulo-seccion-principal mb-3" style="font-weight:bold">Protector de colchón</h3>
+        <h3 class="mb-3">Plástico</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/protector_de_colchon/plastico.jpg" alt="1 1/2 pl. (90cm)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">1 1/2 pl. (90cm)</h4>
+                <p class="precio-producto">$21300</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/protector_de_colchon/plastico.jpg" alt="2 1/2 pl. (1.50mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">2 1/2 pl. (1.50mts)</h4>
+                <p class="precio-producto">$26350</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/protector_de_colchon/plastico.jpg" alt="Queen (1.60mts)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Queen (1.60mts)</h4>
+                <p class="precio-producto">$28850</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/protector_de_colchon/plastico.jpg" alt="King">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">King</h4>
+                <p class="precio-producto">$30800</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="sabanas" class="titulo-seccion-principal mb-3" style="font-weight:bold">Sábanas</h3>
+        <h3 id="1pl" class="mb-3">1 1/2 plazas</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/1pl/basic.jpg" alt="Basic">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Basic</h4>
+                <p class="precio-producto">$39990</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/1pl/cannon_144h.webp" alt="Cannon 144 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Cannon 144 hilos</h4>
+                <p class="precio-producto">$58650</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/1pl/colors_mezcla.webp" alt="Colors 144h. mezcla algodón y poliester">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Colors 144h. mezcla algodón y poliester</h4>
+                <p class="precio-producto">$49700</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/1pl/colors_puro_algodon.jpg" alt="Colors Bliss 144 hilos 100% algodón">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Colors Bliss 144 hilos 100% algodón</h4>
+                <p class="precio-producto">$56200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/1pl/percal_144h.jpg" alt="Percal 144 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Percal 144 hilos</h4>
+                <p class="precio-producto">$46700</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/1pl/percal_180h.webp" alt="Percal 180 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Percal 180 hilos</h4>
+                <p class="precio-producto">$54000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/1pl/suplesa.webp" alt="Suplesa">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Suplesa</h4>
+                <p class="precio-producto">$47800</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <h3 id="twin" class="mb-3">Twin</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/twin/Danubio_300h.webp" alt="Danubio 300 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Danubio 300 hilos</h4>
+                <p class="precio-producto">$91100</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/twin/Danubio_400h.webp" alt="Danubio 400 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Danubio 400 hilos</h4>
+                <p class="precio-producto">$106000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/twin/Danubio_colors.jpg" alt="Danubio Colors 200 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Danubio Colors 200 hilos</h4>
+                <p class="precio-producto">$62700</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/twin/Nautica_180h.jpg" alt="Náutica 180 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Náutica 180 hilos</h4>
+                <p class="precio-producto">$59800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/twin/suplesa_200h.jpg" alt="Suplesa 200 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Suplesa 200 hilos</h4>
+                <p class="precio-producto">$62700</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="2pl" class="mb-3">2 1/2 plazas o Full</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/2pl/180h.webp" alt="180 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">180 hilos</h4>
+                <p class="precio-producto">$64900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/2pl/basic.jpg" alt="Basic">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Basic</h4>
+                <p class="precio-producto">$51900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/2pl/Cannon_144h.webp" alt="Cannon 144 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Cannon 144 hilos</h4>
+                <p class="precio-producto">$78900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/2pl/Cannon_200h.png" alt="Cannon 200 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Cannon 200 hilos</h4>
+                <p class="precio-producto">$104600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/2pl/Colors_144h_mezcla.webp" alt="Colors 144 hilos mezcla algodón y poliester">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Colors 144 hilos mezcla algodón y poliester</h4>
+                <p class="precio-producto">$64800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/2pl/Colors_144h_puro.jpeg" alt="Colors Bliss 144 hilos 100% algodón">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Colors Bliss 144 hilos 100% algodón</h4>
+                <p class="precio-producto">$69200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/2pl/Danubio_300h.webp" alt="Danubio 300 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Danubio 300 hilos</h4>
+                <p class="precio-producto">$111000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/2pl/Colors_200h.webp" alt="Danubio Colors 200 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Danubio Colors 200 hilos</h4>
+                <p class="precio-producto">$76800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/2pl/Dina_300h.jpg" alt="Dina 300 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Dina 300 hilos</h4>
+                <p class="precio-producto">$104000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/2pl/Nautica.jpg" alt="Náutica">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Náutica</h4>
+                <p class="precio-producto">$75400</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/2pl/Percal_144h.jpg" alt="Percal 144 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Percal 144 hilos</h4>
+                <p class="precio-producto">$58400</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/2pl/Suplesa.jpg" alt="Suplesa">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Suplesa</h4>
+                <p class="precio-producto">$58450</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/2pl/Suplesa_200h.jpg" alt="Suplesa 200 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Suplesa 200 hilos</h4>
+                <p class="precio-producto">$76800</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="queen" class="mb-3">Queen</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/queen/180h.webp" alt="180 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">180 hilos</h4>
+                <p class="precio-producto">$72400</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/queen/300h.jpg" alt="300 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">300 hilos</h4>
+                <p class="precio-producto">$121000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/queen/400h.jpg" alt="400 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">400 hilos</h4>
+                <p class="precio-producto">$139000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/queen/Cannon_200h.png" alt="Cannon 200 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Cannon 200 hilos</h4>
+                <p class="precio-producto">$123200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/queen/Cannon_144h.jpg" alt="Cannon F. 144 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Cannon F. 144 hilos</h4>
+                <p class="precio-producto">$84000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/queen/Colors_144h_mezcla.jpg" alt="Colors 144 hilos mezcla">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Colors 144 hilos mezcla</h4>
+                <p class="precio-producto">$68000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/queen/Colors_144h_puro.webp" alt="Colors Bliss 144 hilos 100% algodón">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Colors Bliss 144 hilos 100% algodón</h4>
+                <p class="precio-producto">$76750</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/queen/Percal_144h.jpg" alt="Percal 144 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Percal 144 hilos</h4>
+                <p class="precio-producto">$61600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/queen/Suplesa.jpg" alt="Suplesa">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Suplesa</h4>
+                <p class="precio-producto">$62850</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/queen/Suplesa_200h.jpg" alt="Suplesa 200h hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Suplesa 200 hilos</h4>
+                <p class="precio-producto">$82200</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="king" class="mb-3">King</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/king/180h.jpg" alt="180 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">180 hilos</h4>
+                <p class="precio-producto">$93600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/king/300h.webp" alt="300 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">300 hilos</h4>
+                <p class="precio-producto">$146000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/king/Cannon_144h.webp" alt="Cannon F. 144 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Cannon F. 144 hilos</h4>
+                <p class="precio-producto">$94300</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/king/Colors_144h_mezcla.jpg" alt="Colors 144 hilos mezcla">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Colors 144 hilos mezcla</h4>
+                <p class="precio-producto">$82000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/king/Colors_144h_puro.jpg" alt="Colors Bliss 144 hilos 100% algodón">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Colors Bliss 144 hilos 100% algodón</h4>
+                <p class="precio-producto">$98500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/king/Danubio_200h.jpg" alt="Danubio Colors 200 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Danubio Colors 200 hilos</h4>
+                <p class="precio-producto">$103800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/king/Percal_144h.webp" alt="Percal 144 hilos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Percal 144 hilos</h4>
+                <p class="precio-producto">$79960</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/king/Suplesa.jpg" alt="Suplesa">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Suplesa</h4>
+                <p class="precio-producto">$82850</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/sabanas/king/Suplesa_200h.webp" alt="Suplesa">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Suplesa</h4>
+                <p class="precio-producto">$103800</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="ajustables" class="mb-3">Ajustables</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/ajustables/1pl.jpg" alt="Danubio 1 1/2">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Danubio 1 1/2</h4>
+                <p class="precio-producto">$22300</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/ajustables/2pl.jpg" alt="Danubio 2 1/2">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Danubio 2 1/2</h4>
+                <p class="precio-producto">$24700</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/ajustables/king.jpg" alt="Danubio King">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Danubio King</h4>
+                <p class="precio-producto">$30900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/ajustables/queen.webp" alt="Danubio Queen">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Danubio Queen</h4>
+                <p class="precio-producto">$26600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/ajustables/percal_1pl.webp" alt="Percal 144h. 100% algodón 1 1/2">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Percal 144h. 100% algodón 1 1/2</h4>
+                <p class="precio-producto">$23500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/ajustables/percal_2pl.jpg" alt="Percal 144h. 100% algodón 2 1/2">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Percal 144h. 100% algodón 2 1/2</h4>
+                <p class="precio-producto">$29600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/ajustables/percal_queen.jpeg" alt="Percal 144h. 100% algodón King">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Percal 144h. 100% algodón King</h4>
+                <p class="precio-producto">$40500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/ajustables/percal_king.jpeg" alt="Percal 144h. 100% algodón Queen">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Percal 144h. 100% algodón Queen</h4>
+                <p class="precio-producto">$37600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/dormitorio/ajustables/percal_twin.jpg" alt="Percal 144h. 100% algodón Twin">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Percal 144h. 100% algodón Twin</h4>
+                <p class="precio-producto">$27900</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </section>
 
     </div>
   </main>
 
-<!-- Footer adaptable con Grilla -->
+  <!-- Footer -->
   <footer class="pie container-fluid py-5">
     <div class="container">
       <div class="row justify-content-between align-items-start">
 
-        <!-- Redes Sociales -->
         <div class="col-12 col-sm-6 col-md-auto text-center text-md-left mb-4 mb-md-0">
           <div class="redes-sociales d-flex justify-content-center justify-content-md-start align-items-center">
             <a href="https://www.instagram.com/marblanco_munro/reels/" target="_blank" class="mr-3">
@@ -114,7 +1536,6 @@
           </div>
         </div>
 
-        <!-- Categorías -->
         <div class="col-6 col-md-auto mb-4 mb-md-0">
           <div class="columna-pie">
             <h4 class="titulo-seccion">Categorías</h4>
@@ -128,7 +1549,6 @@
           </div>
         </div>
 
-        <!-- Más Información -->
         <div class="col-6 col-md-auto mb-4 mb-md-0">
           <div class="columna-pie">
             <h4 class="titulo-seccion">Más información</h4>
@@ -137,7 +1557,6 @@
           </div>
         </div>
 
-        <!-- Contacto -->
         <div class="col-12 col-md-auto">
           <div class="columna-pie">
             <h4 class="titulo-seccion">Contactános</h4>
@@ -145,10 +1564,12 @@
             <p><a href="https://maps.app.goo.gl/msS1herYSwzdVm8B9" target="_blank" class="direccion">Vélez Sársfield 4377, Vicente López</a></p>
           </div>
         </div>
-
       </div>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>  <script src="recursos/funciones.js"></script>
+
+  <a href="#" id="btn-volver-arriba" class="btn-scroll-top" title="Volver arriba"> ↑ </a>  
 </body>
 </html>

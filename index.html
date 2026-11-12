@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio - Mar Blanco</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="recursos/style.css">
 </head>
 <body>
@@ -12,18 +13,16 @@
   <!-- Franja superior -->
   <div class="barra container-fluid py-2"></div>
 
-  <!-- Header adaptable con Sistema de Grillas -->
+  <!-- Header -->
   <header class="header-principal container py-3">
     <div class="row align-items-center">
 
-      <!-- Buscador -->
       <div class="col-12 col-md-4 text-center text-md-left">
         <div class="buscador">
-          <input type="search" class="form-control" placeholder="Buscar producto...">
+          <input type="search" id="buscador" class="form-control" placeholder="Buscar en esta sección...">
         </div>
       </div>
 
-      <!-- Logo -->
       <div class="col-12 col-md-4 text-center mb-3 mb-md-0">
         <a href="index.html" class="logo d-inline-block">
           <img src="img/logo/logo_completo.png" alt="Mar Blanco - Blanquería y decoración" class="img-fluid">
@@ -39,7 +38,8 @@
 
   <!-- Navegación principal -->
   <nav class="nav-principal container-fluid px-0 my-2">
-    <ul class="nav justify-content-center border-top border-bottom py-2">
+    <button type="button" id="btn-menu" class="btn-menu">☰ Menú</button>
+    <ul id="menu-principal" class="nav justify-content-center border-top border-bottom py-2">
       <li class="nav-item mx-2"><a href="index.html" class="nav-link px-2">Inicio</a></li>
       <li class="nav-item mx-2"><a href="ambiente.html" class="nav-link px-2">Ambiente</a></li>
       <li class="nav-item mx-2"><a href="bano.html" class="nav-link px-2">Baño</a></li>
@@ -87,13 +87,12 @@
     </div>
   </main>
 
-  <!-- Sección Los Más Vendidos -->
+  <!-- Los Más Vendidos -->
   <section class="container mb-5">
     <h2 class="titulo-mas-vendidos text-center mb-4">Los más vendidos 🔥</h2>
 
     <div class="row justify-content-center">
 
-      <!-- Producto 1 -->
       <div class="col-12 col-md-4 mb-4">
         <article class="tarjeta-producto-vendido">
           <div class="imagen-wrap">
@@ -107,7 +106,6 @@
         </article>
       </div>
 
-      <!-- Producto 2 -->
       <div class="col-12 col-md-4 mb-4">
         <article class="tarjeta-producto-vendido">
           <div class="imagen-wrap">
@@ -121,7 +119,6 @@
         </article>
       </div>
 
-      <!-- Producto 3 -->
       <div class="col-12 col-md-4 mb-4">
         <article class="tarjeta-producto-vendido">
           <div class="imagen-wrap">
@@ -135,7 +132,6 @@
         </article>
       </div>
 
-      <!-- Producto 4 -->
       <div class="col-12 col-md-4 mb-4">
         <article class="tarjeta-producto-vendido">
           <div class="imagen-wrap">
@@ -149,7 +145,6 @@
         </article>
       </div>
 
-      <!-- Producto 5 -->
       <div class="col-12 col-md-4 mb-4">
         <article class="tarjeta-producto-vendido">
           <div class="imagen-wrap">
@@ -163,7 +158,6 @@
         </article>
       </div>
 
-      <!-- Producto 6 -->
       <div class="col-12 col-md-4 mb-4">
         <article class="tarjeta-producto-vendido">
           <div class="imagen-wrap">
@@ -176,16 +170,14 @@
           </div>
         </article>
       </div>
-
     </div>
   </section>
 
-  <!-- Footer adaptable con Grilla -->
+  <!-- Footer -->
   <footer class="pie container-fluid py-5">
     <div class="container">
       <div class="row justify-content-between align-items-start">
 
-        <!-- Redes Sociales -->
         <div class="col-12 col-sm-6 col-md-auto text-center text-md-left mb-4 mb-md-0">
           <div class="redes-sociales d-flex justify-content-center justify-content-md-start align-items-center">
             <a href="https://www.instagram.com/marblanco_munro/reels/" target="_blank" class="mr-3">
@@ -197,7 +189,6 @@
           </div>
         </div>
 
-        <!-- Categorías -->
         <div class="col-6 col-md-auto mb-4 mb-md-0">
           <div class="columna-pie">
             <h4 class="titulo-seccion">Categorías</h4>
@@ -211,7 +202,6 @@
           </div>
         </div>
 
-        <!-- Más Información -->
         <div class="col-6 col-md-auto mb-4 mb-md-0">
           <div class="columna-pie">
             <h4 class="titulo-seccion">Más información</h4>
@@ -220,7 +210,6 @@
           </div>
         </div>
 
-        <!-- Contacto -->
         <div class="col-12 col-md-auto">
           <div class="columna-pie">
             <h4 class="titulo-seccion">Contactános</h4>
@@ -228,10 +217,13 @@
             <p><a href="https://maps.app.goo.gl/msS1herYSwzdVm8B9" target="_blank" class="direccion">Vélez Sársfield 4377, Vicente López</a></p>
           </div>
         </div>
-
       </div>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="recursos/funciones.js"></script>
+
+  <a href="#" id="btn-volver-arriba" class="btn-scroll-top" title="Volver arriba"> ↑ </a>
 </body>
 </html>

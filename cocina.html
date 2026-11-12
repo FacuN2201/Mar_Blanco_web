@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cocina - Mar Blanco</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="recursos/style.css">
 </head>
 <body>
@@ -12,18 +12,16 @@
   <!-- Franja superior -->
   <div class="barra container-fluid py-2"></div>
 
-  <!-- Header adaptable con Sistema de Grillas -->
+  <!-- Header -->
   <header class="header-principal container py-3">
     <div class="row align-items-center">
 
-      <!-- Buscador -->
       <div class="col-12 col-md-4 text-center text-md-left">
         <div class="buscador">
-          <input type="search" class="form-control" placeholder="Buscar producto...">
+          <input type="search" id="buscador" class="form-control" placeholder="Buscar en esta sección...">
         </div>
       </div>
 
-      <!-- Logo -->
       <div class="col-12 col-md-4 text-center mb-3 mb-md-0">
         <a href="index.html" class="logo d-inline-block">
           <img src="img/logo/logo_completo.png" alt="Mar Blanco - Blanquería y decoración" class="img-fluid">
@@ -39,7 +37,8 @@
   
   <!-- Navegación principal -->
   <nav class="nav-principal container-fluid px-0 my-2">
-    <ul class="nav justify-content-center border-top border-bottom py-2">
+    <button type="button" id="btn-menu" class="btn-menu">☰ Menú</button>
+    <ul id="menu-principal" class="nav justify-content-center border-top border-bottom py-2">
       <li class="nav-item mx-2"><a href="index.html" class="nav-link px-2">Inicio</a></li>
       <li class="nav-item mx-2"><a href="ambiente.html" class="nav-link px-2">Ambiente</a></li>
       <li class="nav-item mx-2"><a href="bano.html" class="nav-link px-2">Baño</a></li>
@@ -51,45 +50,621 @@
     </ul>
   </nav>
 
-  <!-- Contenido principal extendido a los bordes -->
+  <!-- Contenido principal -->
   <main class="container-fluid px-3 px-md-5 my-4">
     <div class="row">
 
-      <!-- Columna Izquierda: Título + Categorías -->
       <aside class="col-12 col-md-3 col-lg-2 text-left mb-4 mb-md-0">
         
-        <!-- Ruta de navegación y Título a la izquierda -->
-        <small class="d-block mb-1" style="font-size: 0.75rem;">INICIO / COCINA</small>
-        <h2 class="mb-4">Cocina</h2>
+        <small class="d-block mb-1" style="font-size: 0.75rem; font-weight:bold">INICIO / COCINA</small>
+        <h2 class="mb-4" style="font-weight:bold; color: #1ba4e8;">Cocina</h2>
 
-        <!-- Lista de Subcategorías -->
         <div class="subcategorias">
-          <p class="mb-2"><a href="#" class="text-dark"></a></p>
-          <p class="mb-2"><a href="#" class="text-dark"></a></p>
-          <p class="mb-2"><a href="#" class="text-dark"></a></p>
-          <p class="mb-2"><a href="#" class="text-dark"></a></p>
+          <p class="mb-2"><a href="#Caminos de mesa" class="text-dark">Caminos de mesa</a></p>
+          <p class="mb-2"><a href="#Delantales" class="text-dark">Delantales</a></p>
+          <p class="mb-2"><a href="#Individuales" class="text-dark">Individuales</a></p>
+          <p class="mb-2"><a href="#Manteles" class="text-dark">Manteles</a></p>
+          <p class="mb-2"><a href="#Repasadores" class="text-dark">Repasadores</a></p>
         </div>
 
       </aside>
 
-      <!-- Columna Derecha: Fotos de Productos distribuidas a lo ancho -->
       <section class="productos col-12 col-md-9 col-lg-10">
         
-        <h2 class="mb-4"></h2>
+        <h3 id="Caminos de mesa" class="titulo-seccion-principal mb-4" style="font-weight:bold">Caminos de mesa</h3>
         <div class="row">
 
           <div class="col-6 col-md-3 mb-4">
             <div class="tarjeta-producto">
               <div class="imagen-wrap">
-                <img src="img/" alt="">
+                <img src="img/cocina/caminos_de_mesa/damazquino.jpeg" alt="Damazquino">
               </div>
               <div class="info-producto">
-                <h4 class="titulo-producto"></h4>
-                <p class="precio-producto"></p>
+                <h4 class="titulo-producto">Damazquino</h4>
+                <p class="precio-producto">$28500</p>
               </div>
             </div>
           </div>
 
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/caminos_de_mesa/ecocuero_con_flecos.jpg" alt="Ecocuero con flecos">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Ecocuero con flecos</h4>
+                <p class="precio-producto">$11000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/caminos_de_mesa/istambul.jpeg" alt="Istambul">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Istambul</h4>
+                <p class="precio-producto">$21800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/caminos_de_mesa/laurel.jpeg" alt="Laurel">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Laurel</h4>
+                <p class="precio-producto">$21800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/caminos_de_mesa/marea.jpeg" alt="Marea">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Marea</h4>
+                <p class="precio-producto">$38700</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/caminos_de_mesa/nature.jpeg" alt="Nature">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Nature</h4>
+                <p class="precio-producto">$18500</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="Delantales" class="titulo-seccion-principal mb-4" style="font-weight:bold">Delantales</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/delantales/clubes_Citiblanc.jpg" alt="Clubes Citiblanc">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Clubes Citiblanc</h4>
+                <p class="precio-producto">$12600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/delantales/infantil_liso.webp" alt="Infantil liso">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Infantil liso</h4>
+                <p class="precio-producto">$15700</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/delantales/jean_Citiblanc.webp" alt="Jean Citiblanc">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Jean Citiblanc</h4>
+                <p class="precio-producto">$13500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/delantales/jean_con_cuero_VH.jpg" alt="Jean con cuero VH">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Jean con cuero VH</h4>
+                <p class="precio-producto">$17000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/delantales/jean_estampado.jpg" alt="Jean estampado">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Jean estampado</h4>
+                <p class="precio-producto">$22400</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/delantales/jean_infantil_estampado.jpg" alt="Jean infantil estampado">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Jean infantil estampado</h4>
+                <p class="precio-producto">$15700</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/delantales/jean_liso_Alamesa.jpg" alt="Jean liso Alamesa">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Jean liso Alamesa</h4>
+                <p class="precio-producto">$18900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/delantales/Mafalda.webp" alt="Mafalda">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Mafalda</h4>
+                <p class="precio-producto">$29300</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/delantales/tusor_Citiblanc.jpg" alt="Tusor Citiblanc">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Tusor Citiblanc</h4>
+                <p class="precio-producto">$9000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="Individuales" class="titulo-seccion-principal mb-4" style="font-weight:bold">Individuales</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/individuales/set_x4_Mafalda.jpeg" alt="Set x4 Mafalda">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Set x4 Mafalda</h4>
+                <p class="precio-producto">$15250</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/individuales/set_x6_ecocuero.jpeg" alt="Set x6 Ecocuero">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Set x6 Ecocuero</h4>
+                <p class="precio-producto">$12500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/individuales/set_x6_simil_cuero_Citiblanc.jpeg" alt="Set x6 simil cuero Citiblanc">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Set x6 simil cuero Citiblanc</h4>
+                <p class="precio-producto">$23400</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="Manteles" class="titulo-seccion-principal mb-4" style="font-weight:bold">Manteles</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/cristal.jpeg" alt="Cristal 1.50mts redondo">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Cristal 1.50mts redondo</h4>
+                <p class="precio-producto">$13200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/cristal.jpeg" alt="Cristal 1.80 redondo y cuadrado">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Cristal 1.80 redondo y cuadrado</h4>
+                <p class="precio-producto">$15400</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/cristal.jpeg" alt="Cristal 2mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Cristal 2mts</h4>
+                <p class="precio-producto">$16600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/cristal.jpeg" alt="Cristal 2.50mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Cristal 2.50mts</h4>
+                <p class="precio-producto">$20500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/cristal.jpeg" alt="Cristal 3mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Cristal 3mts</h4>
+                <p class="precio-producto">$23800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/Ecocuero_v1.jpeg" alt="Ecocuero 1.40mts redondo o cuadrado">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Ecocuero 1.40mts redondo o cuadrado</h4>
+                <p class="precio-producto">$18750</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/ecocuero_v2.jpeg" alt="Ecocuero 1.80mts redondo o cuadrado">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Ecocuero 1.80mts redondo o cuadrado</h4>
+                <p class="precio-producto">$32200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/Ecocuero_v3.jpeg" alt="Ecocuero 1,40x1.80mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Ecocuero 1,40x1.80mts</h4>
+                <p class="precio-producto">$23800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/Ecocuero_v4.jpeg" alt="Ecocuero 2mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Ecocuero 2mts</h4>
+                <p class="precio-producto">$25990</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/Ecocuero_v1.jpeg" alt="Ecocuero 2.50mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Ecocuero 2.50mts</h4>
+                <p class="precio-producto">$32800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/Ecocuero_v2.jpeg" alt="Ecocuero 3mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Ecocuero 3mts</h4>
+                <p class="precio-producto">$37800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/ecocuero_simil_lino.jpeg" alt="Ecocuero Simil lino 1.40mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Ecocuero Simil lino 1.40mts</h4>
+                <p class="precio-producto">$26250</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/ecocuero_simil_lino.jpeg" alt="Ecocuero Simil lino 1.40mts x 1.80mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Ecocuero Simil lino 1.40mts x 1.80mts</h4>
+                <p class="precio-producto">$33500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/ecocuero_simil_lino.jpeg" alt="Ecocuero Simil lino 1.80mts redondo">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Ecocuero Simil lino 1.80mts redondo</h4>
+                <p class="precio-producto">$39400</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/ecocuero_simil_lino.jpeg" alt="Ecocuero Simil lino 2mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Ecocuero Simil lino 2mts</h4>
+                <p class="precio-producto">$36600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/ecocuero_simil_lino.jpeg" alt="Ecocuero Simil lino 2.50mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Ecocuero Simil lino 2.50mts</h4>
+                <p class="precio-producto">$44900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/ecocuero_simil_lino.jpeg" alt="Ecocuero Simil lino 3mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Ecocuero Simil lino 3mts</h4>
+                <p class="precio-producto">$53100</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/lienzo.jpeg" alt="Lienzo 1.50mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Lienzo 1.50mts</h4>
+                <p class="precio-producto">$15800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/lienzo.jpeg" alt="Lienzo 2mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Lienzo 2mts</h4>
+                <p class="precio-producto">$19500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/lienzo.jpeg" alt="Lienzo 2.50mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Lienzo 2.50mts</h4>
+                <p class="precio-producto">$22900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/tusor.jpeg" alt="Tusor 1.40mts X 1.80mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Tusor 1.40mts X 1.80mts</h4>
+                <p class="precio-producto">$25200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/tusor.jpeg" alt="Tusor 2mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Tusor 2mts</h4>
+                <p class="precio-producto">$27800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/tusor.jpeg" alt="Tusor 2.50mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Tusor 2.50mts</h4>
+                <p class="precio-producto">$33900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/manteles/tusor.jpeg" alt="Tusor 3mts">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Tusor 3mts</h4>
+                <p class="precio-producto">$39900</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="Repasadores" class="titulo-seccion-principal mb-4" style="font-weight:bold">Repasadores</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/repasadores/Arcoiris.jpg" alt="Arco Iris">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Arco Iris</h4>
+                <p class="precio-producto">$8000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/repasadores/Fantasia.jpg" alt="Fantasía">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Fantasía</h4>
+                <p class="precio-producto">$5450</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/repasadores/Karsten.jpg" alt="Karsten">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Karsten</h4>
+                <p class="precio-producto">$7400</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/repasadores/Karsten_tela_algodón.jpg" alt="Karsten tela algodón">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Karsten tela algodón</h4>
+                <p class="precio-producto">$9100</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/repasadores/Palette.jpg" alt="Palette">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Palette</h4>
+                <p class="precio-producto">$6800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/cocina/repasadores/tela_x2_VH.jpg" alt="Tela x2 VH">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Tela x2 VH</h4>
+                <p class="precio-producto">$8800</p>
+              </div>
+            </div>
+          </div>
         </div>
         
       </section>
@@ -97,12 +672,11 @@
     </div>
   </main>
 
-<!-- Footer adaptable con Grilla -->
+  <!-- Footer -->
   <footer class="pie container-fluid py-5">
     <div class="container">
       <div class="row justify-content-between align-items-start">
 
-        <!-- Redes Sociales -->
         <div class="col-12 col-sm-6 col-md-auto text-center text-md-left mb-4 mb-md-0">
           <div class="redes-sociales d-flex justify-content-center justify-content-md-start align-items-center">
             <a href="https://www.instagram.com/marblanco_munro/reels/" target="_blank" class="mr-3">
@@ -114,7 +688,6 @@
           </div>
         </div>
 
-        <!-- Categorías -->
         <div class="col-6 col-md-auto mb-4 mb-md-0">
           <div class="columna-pie">
             <h4 class="titulo-seccion">Categorías</h4>
@@ -128,7 +701,6 @@
           </div>
         </div>
 
-        <!-- Más Información -->
         <div class="col-6 col-md-auto mb-4 mb-md-0">
           <div class="columna-pie">
             <h4 class="titulo-seccion">Más información</h4>
@@ -137,7 +709,6 @@
           </div>
         </div>
 
-        <!-- Contacto -->
         <div class="col-12 col-md-auto">
           <div class="columna-pie">
             <h4 class="titulo-seccion">Contactános</h4>
@@ -145,10 +716,12 @@
             <p><a href="https://maps.app.goo.gl/msS1herYSwzdVm8B9" target="_blank" class="direccion">Vélez Sársfield 4377, Vicente López</a></p>
           </div>
         </div>
-
       </div>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>  <script src="recursos/funciones.js"></script>
+
+  <a href="#" id="btn-volver-arriba" class="btn-scroll-top" title="Volver arriba"> ↑ </a>
 </body>
 </html>

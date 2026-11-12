@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Baño - Mar Blanco</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="recursos/style.css">
 </head>
 <body>
@@ -12,18 +12,16 @@
   <!-- Franja superior -->
   <div class="barra container-fluid py-2"></div>
 
-  <!-- Header adaptable con Sistema de Grillas -->
+  <!-- Header -->
   <header class="header-principal container py-3">
     <div class="row align-items-center">
 
-      <!-- Buscador -->
       <div class="col-12 col-md-4 text-center text-md-left">
         <div class="buscador">
-          <input type="search" class="form-control" placeholder="Buscar producto...">
+          <input type="search" id="buscador" class="form-control" placeholder="Buscar en esta sección...">
         </div>
       </div>
 
-      <!-- Logo -->
       <div class="col-12 col-md-4 text-center mb-3 mb-md-0">
         <a href="index.html" class="logo d-inline-block">
           <img src="img/logo/logo_completo.png" alt="Mar Blanco - Blanquería y decoración" class="img-fluid">
@@ -39,7 +37,8 @@
   
   <!-- Navegación principal -->
   <nav class="nav-principal container-fluid px-0 my-2">
-    <ul class="nav justify-content-center border-top border-bottom py-2">
+    <button type="button" id="btn-menu" class="btn-menu">☰ Menú</button>
+    <ul id="menu-principal" class="nav justify-content-center border-top border-bottom py-2">
       <li class="nav-item mx-2"><a href="index.html" class="nav-link px-2">Inicio</a></li>
       <li class="nav-item mx-2"><a href="ambiente.html" class="nav-link px-2">Ambiente</a></li>
       <li class="nav-item mx-2"><a href="bano.html" class="nav-link px-2">Baño</a></li>
@@ -51,45 +50,1679 @@
     </ul>
   </nav>
 
-  <!-- Contenido principal extendido a los bordes -->
+  <!-- Contenido principal -->
   <main class="container-fluid px-3 px-md-5 my-4">
     <div class="row">
 
-      <!-- Columna Izquierda: Título + Categorías -->
       <aside class="col-12 col-md-3 col-lg-2 text-left mb-4 mb-md-0">
         
-        <!-- Ruta de navegación y Título a la izquierda -->
-        <small class="d-block mb-1" style="font-size: 0.75rem;">INICIO / BAÑO</small>
-        <h2 class="mb-4">Baño</h2>
+        <small class="d-block mb-1" style="font-size: 0.75rem; font-weight:bold">INICIO / BAÑO</small>
+        <h2 class="mb-4" style="font-weight:bold; color: #1ba4e8;">Baño</h2>
 
-        <!-- Lista de Subcategorías -->
         <div class="subcategorias">
-          <p class="mb-2"><a href="#" class="text-dark"></a></p>
-          <p class="mb-2"><a href="#" class="text-dark"></a></p>
-          <p class="mb-2"><a href="#" class="text-dark"></a></p>
-          <p class="mb-2"><a href="#" class="text-dark"></a></p>
+          
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <a href="#accesorios" class="text-dark">Accesorios</a>
+            <button class="btn-desplegar-sub" type="button" data-bs-toggle="collapse" data-bs-target="#subAccesorios" aria-expanded="false" aria-controls="subAccesorios">
+              <span class="icono-toggle"></span>
+            </button>
+          </div>
+
+          <div class="collapse ps-3 border-start ms-1 mb-2" id="subAccesorios">
+            <div class="d-flex flex-column gap-2">
+              <a href="#dispenser" class="text-dark" style="font-size: 0.9rem;">Dispenser</a>
+              <a href="#escobillas" class="text-dark" style="font-size: 0.9rem;">Escobillas</a>
+              <a href="#espejos" class="text-dark" style="font-size: 0.9rem;">Espejos</a>
+              <a href="#jaboneras" class="text-dark" style="font-size: 0.9rem;">Jaboneras</a>
+              <a href="#organizadores" class="text-dark" style="font-size: 0.9rem;">Organizadores</a>
+              <a href="#portacepillos" class="text-dark" style="font-size: 0.9rem;">Portacepillos</a>
+              <a href="#portahisopos" class="text-dark" style="font-size: 0.9rem;">Porta hisopos y algodón</a>
+              <a href="#portarollos" class="text-dark" style="font-size: 0.9rem;">Portarollos</a>
+              <a href="#shower" class="text-dark" style="font-size: 0.9rem;">Shower de ducha</a>
+            </div>
+          </div>
+
+          <p class="mb-2"><a href="#alfombras" class="text-dark">Alfombras</a></p>
+          <p class="mb-2"><a href="#barrales" class="text-dark">Barrales</a></p>
+          <p class="mb-2"><a href="#batas" class="text-dark">Batas</a></p>
+          <p class="mb-2"><a href="#cortinas-protectores" class="text-dark">Cortinas y protectores</a></p>
+          <p class="mb-2"><a href="#ganchos" class="text-dark">Ganchos</a></p>
+          <p class="mb-2"><a href="#juego" class="text-dark">Juego de toalla y toallón</a></p>
+          <p class="mb-2"><a href="#toallas" class="text-dark">Toallas</a></p>
+          <p class="mb-2"><a href="#toallones" class="text-dark">Toallones</a></p>
+
         </div>
 
       </aside>
 
-      <!-- Columna Derecha: Fotos de Productos distribuidas a lo ancho -->
       <section class="productos col-12 col-md-9 col-lg-10">
         
-        <h2 class="mb-4"></h2>
+        <h3 id="accesorios" class="titulo-seccion-principal mb-4" style="font-weight:bold">Accesorios</h3>
+        <h3 id="dispenser">Dispensers</h3>
         <div class="row">
 
           <div class="col-6 col-md-3 mb-4">
             <div class="tarjeta-producto">
               <div class="imagen-wrap">
-                <img src="img/" alt="">
+                <img src="img/bano/accesorio/Dispenser/Amalfi_bamboo.png" alt="Amalfi bamboo">
               </div>
               <div class="info-producto">
-                <h4 class="titulo-producto"></h4>
-                <p class="precio-producto"></p>
+                <h4 class="titulo-producto">Amalfi bamboo</h4>
+                <p class="precio-producto">$22100</p>
               </div>
             </div>
           </div>
 
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Dispenser/bamboo.jpg" alt="Bamboo">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Bamboo</h4>
+                <p class="precio-producto">$23820</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Dispenser/conico.jpg" alt="Cónico">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Cónico</h4>
+                <p class="precio-producto">$11400</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Dispenser/essential_soap.jpg" alt="Essential Soap">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Essential Soap</h4>
+                <p class="precio-producto">$9650</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Dispenser/golda_ceramica.jpg" alt="Golda cerámica">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Golda cerámica</h4>
+                <p class="precio-producto">$8820</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Dispenser/gota.jpg" alt="Gota">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Gota</h4>
+                <p class="precio-producto">$6160</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Dispenser/J_y_S_home.jpg" alt="J y S Home">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">J y S Home</h4>
+                <p class="precio-producto">$10020</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Dispenser/marble.jpg" alt="Marble">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Marble</h4>
+                <p class="precio-producto">$10600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Dispenser/plastico_con_bamboo_Citiblanc.jpg" alt="Plástico con bamboo Citiblanc">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Plástico con bamboo Citiblanc</h4>
+                <p class="precio-producto">$10800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Dispenser/raye_con_bamboo_Decormesa.jpg" alt="Raye con bamboo Decormesa">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Raye con bamboo Decormesa</h4>
+                <p class="precio-producto">$13800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Dispenser/resina_alto.jpg" alt="Resina alto">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Resina alto</h4>
+                <p class="precio-producto">$9380</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Dispenser/resina_bajo.webp" alt="Resina bajo">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Resina bajo</h4>
+                <p class="precio-producto">$5970</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Dispenser/rustico_rayas.jpg" alt="Rústico rayas">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Rústico rayas</h4>
+                <p class="precio-producto">$16780</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Dispenser/vidrio_con_tapa_negra.jpg" alt="Vidrio con tapa negra">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Vidrio con tapa negra</h4>
+                <p class="precio-producto">$9950</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Dispenser/vidrio_dorado.webp" alt="Vidrio dorado">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Vidrio dorado</h4>
+                <p class="precio-producto">$14350</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Dispenser/vidrio_transparente.jpg" alt="Vidrio transparente">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Vidrio transparente</h4>
+                <p class="precio-producto">$7190</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="escobillas">Escobillas</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Escobilla/acero.jpg" alt="Acero">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Acero</h4>
+                <p class="precio-producto">$17830</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Escobilla/Amalfi_ruber.jpg" alt="Amalfi ruber">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Amalfi ruber</h4>
+                <p class="precio-producto">$36400</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Escobilla/negra-blanca_decorinter.jpg" alt="Negra-blanca decorinter">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Negra-blanca decorinter</h4>
+                <p class="precio-producto">$25400</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Escobilla/oval_acero_Decorinter.jpg" alt="Oval acero Decorinter">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Oval acero Decorinter</h4>
+                <p class="precio-producto">$26600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Escobilla/plastica_rayada_Citiblanc.jpg" alt="Plástica rayada Citiblanc">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Plástica rayada Citiblanc</h4>
+                <p class="precio-producto">$16200</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="espejos">Espejos</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Espejos/espejo_con_aumento.jpeg" alt="Con aumento Amalfi">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Con aumento Amalfi</h4>
+                <p class="precio-producto">$31700</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="jaboneras">Jaboneras</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Jaboneras/ceramica_bath_Amalfi.jpeg" alt="Cerámica bath Amalfi">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Cerámica bath Amalfi</h4>
+                <p class="precio-producto">$16030</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Jaboneras/plastica_banera.jpg" alt="Plástica bañera">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Plástica bañera</h4>
+                <p class="precio-producto">$5000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Jaboneras/plastica_con_bamboo_Citiblanc.jpg" alt="Plástica con bamboo Citiblanc">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Plástica con bamboo Citiblanc</h4>
+                <p class="precio-producto">$5400</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Jaboneras/plastica_rayada.jpg" alt="Plástica rayada">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Plástica rayada</h4>
+                <p class="precio-producto">$7750</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Jaboneras/reversible_Amalfi.jpg" alt="Reversible Amalfi">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Reversible Amalfi</h4>
+                <p class="precio-producto">$2600</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="organizadores">Organizadores</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Organizadores/esquinero_bamboo.webp" alt="Esquinero bamboo">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Esquinero bamboo</h4>
+                <p class="precio-producto">$34150</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Organizadores/estante_doble_bamboo.webp" alt="Estante doble bamboo">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Estante doble bamboo</h4>
+                <p class="precio-producto">$34160</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Organizadores/estante_simple_bamboo.webp" alt="Estante simple bamboo">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Estante simple bamboo</h4>
+                <p class="precio-producto">$31170</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Organizadores/jabonera_evolution.webp" alt="Jabonera evolution">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Jabonera evolution</h4>
+                <p class="precio-producto">$17620</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Organizadores/perchero_bath.jpeg" alt="Perchero bath">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Perchero bath</h4>
+                <p class="precio-producto">$27550</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="portacepillos">Portacepillos</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Portacepillos/bamboo_Amalfi.jpg" alt="Bamboo Amalfi">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Bamboo Amalfi</h4>
+                <p class="precio-producto">$16550</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="portahisopos">Porta hisopos y algodón</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Portahisopo_y_algodon/con_tapa_bamboo.jpg" alt="Con tapa bamboo">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Con tapa bamboo</h4>
+                <p class="precio-producto">$8800</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="portarollos">Portarollos</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Portarollos/piso_ciro_Decorinter.jpg" alt="Piso Ciro Decorinter">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Piso Ciro Decorinter</h4>
+                <p class="precio-producto">$42000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Portarollos/piso_cromado.jpg" alt="Piso cromado">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Piso cromado</h4>
+                <p class="precio-producto">$28700</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Portarollos/piso_efe_Decorinter.jpg" alt="Piso Efe Decorinter (bamboo)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Piso Efe Decorinter (bamboo)</h4>
+                <p class="precio-producto">$32600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Portarollos/tela_estampado.jpg" alt="Tela estampado">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Tela estampado</h4>
+                <p class="precio-producto">$10350</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="shower">Shower de ducha</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/accesorio/Shower de ducha/shower_de_ducha.jpeg" alt="Caddy negro">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Caddy negro</h4>
+                <p class="precio-producto">$40650</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="alfombras" class="titulo-seccion-principal mb-4" style="font-weight:bold">Alfombras</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/antideslizante_bajo_el_mar.jpeg" alt="Antideslizante bajo el mar - Dino">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Antideslizante bajo el mar - Dino</h4>
+                <p class="precio-producto">$20550</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/antideslizante_duk_Amalfi.jpg" alt="Antideslizante duk Amalfi">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Antideslizante duk Amalfi</h4>
+                <p class="precio-producto">$23200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/goma.webp" alt="Antideslizante goma Citiblanc">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Antideslizante goma Citiblanc</h4>
+                <p class="precio-producto">$7600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/antideslizante_piedras_Eliplast.jpg" alt="Antideslizante piedras Eliplast">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Antideslizante piedras Eliplast</h4>
+                <p class="precio-producto">$14610</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/antideslizante_XXL_Amalfi.jpg" alt="Antideslizante XXL Amalfi">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Antideslizante XXL Amalfi</h4>
+                <p class="precio-producto">$27500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/Barak_dorada.webp" alt="Barak dorada">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Barak dorada</h4>
+                <p class="precio-producto">$10800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/doble.webp" alt="Doble Decorinter">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Doble Decorinter</h4>
+                <p class="precio-producto">$25150</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/Mafalda.jpg" alt="Mafalda">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Mafalda</h4>
+                <p class="precio-producto">$21950</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/memory_Citiblanc.jpg" alt="Memory Citiblanc">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Memory Citiblanc</h4>
+                <p class="precio-producto">$7600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/Mini_Decorinter.jpg" alt="Mini Decorinter">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Mini Decorinter</h4>
+                <p class="precio-producto">$20100</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/pelo_chica_Amalfi.jpg" alt="Pelo chica Amalfi">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Pelo chica Amalfi</h4>
+                <p class="precio-producto">$11600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/pelo_grande_Amalfi.jpg" alt="Pelo grande Amalfi">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Pelo grande Amalfi</h4>
+                <p class="precio-producto">$17700</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/pelo_largo_Eliplast.jpg" alt="Pelo largo Eliplast">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Pelo largo Eliplast</h4>
+                <p class="precio-producto">$6200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/shaggy_Citiblanc.jpg" alt="Shaggy Citiblanc (Redondo y rectangular)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Shaggy Citiblanc (Redondo y rectangular)</h4>
+                <p class="precio-producto">$8100</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/simil_lino_Citiblanc.jpg" alt="Simil lino Citiblanc">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Simil lino Citiblanc</h4>
+                <p class="precio-producto">$8100</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/toalla_base_goma_Karsten.jpg" alt="Toalla base goma Karsten">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Toalla base goma Karsten</h4>
+                <p class="precio-producto">$13600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/toalla_Karsten_Juliett.jpg" alt="Toalla Karsten Juliett">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Toalla Karsten Juliett</h4>
+                <p class="precio-producto">$14990</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/alfombras/waffle.jpeg" alt="Waffle Amalfi">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Waffle Amalfi</h4>
+                <p class="precio-producto">$22150</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="barrales" class="titulo-seccion-principal mb-4" style="font-weight:bold">Barrales</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/barrales/aluminio.jpg" alt="Aluminio">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Aluminio</h4>
+                <p class="precio-producto">$11400</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/barrales/blanco_fino.jpg" alt="Blanco fino">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Blanco fino</h4>
+                <p class="precio-producto">$14610</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/barrales/curvo.jpg" alt="Curvo 90cmx90cm">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Curvo 90cmx90cm</h4>
+                <p class="precio-producto">$29600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/barrales/curvo_L.jpg" alt="Curvo L">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Curvo L</h4>
+                <p class="precio-producto">$37500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/barrales/estriado.jpg" alt="Estriado">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Estriado</h4>
+                <p class="precio-producto">$19150</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/barrales/estriado_plata.jpg" alt="Estriado plata">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Estriado plata</h4>
+                <p class="precio-producto">$33950</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/barrales/grueso_corto.jpg" alt="Grueso corto 80cm">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Grueso corto 80cm</h4>
+                <p class="precio-producto">$13850</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/barrales/grueso_liso.jpg" alt="Grueso liso">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Grueso liso</h4>
+                <p class="precio-producto">$17650</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="batas" class="titulo-seccion-principal mb-4" style="font-weight:bold">Batas</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/batas/alvornoz.jpeg" alt="Alvornoz">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Alvornoz</h4>
+                <p class="precio-producto">$13500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/batas/Arcoiris.jpg" alt="Arcoiris">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Arcoiris</h4>
+                <p class="precio-producto">$78650</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/batas/Arcoiris_XXL.webp" alt="Arcoiris XXL">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Arcoiris XXL</h4>
+                <p class="precio-producto">$82800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/batas/Franco_Valente.webp" alt="Franco Valente">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Franco Valente</h4>
+                <p class="precio-producto">$62300</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/batas/infantil_microfibra.jpeg" alt="Infantil microfibra">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Infantil microfibra</h4>
+                <p class="precio-producto">$9900</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="cortinas-protectores" class="titulo-seccion-principal mb-4" style="font-weight:bold">Cortinas y protectores</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/P.V.C_3D_cristal.webp" alt="P.V.C 3D cristal">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">P.V.C 3D cristal</h4>
+                <p class="precio-producto">$15800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/P.V.C._Amalfi.webp" alt="P.V.C. Amalfi">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">P.V.C. Amalfi</h4>
+                <p class="precio-producto">$19990</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/P.V.C._Amalfi_con_visor.webp" alt="P.V.C. Amalfi con visor">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">P.V.C. Amalfi con visor</h4>
+                <p class="precio-producto">$24500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/plastica_Amalfi.jpg" alt="Plástica Amalfi">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Plástica Amalfi</h4>
+                <p class="precio-producto">$13990</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/plastica_doble_Eliplast.jpg" alt="Plástica doble Eliplast">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Plástica doble Eliplast</h4>
+                <p class="precio-producto">$10850</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/plastica_Mafalda.webp" alt="Plástica Mafalda">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Plástica Mafalda</h4>
+                <p class="precio-producto">$17950</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/plastica_simple_Eliplast.jpg" alt="Plástica simple Eliplast">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Plástica simple Eliplast</h4>
+                <p class="precio-producto">$10200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/protector_100_micrones.jpg" alt="Protector 100 micrones">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Protector 100 micrones</h4>
+                <p class="precio-producto">$8200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/protector_70_micrones.jpg" alt="Protector 70 micrones">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Protector 70 micrones</h4>
+                <p class="precio-producto">$6350</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/teflon_AFA.jpeg" alt="Teflón AFA">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Teflón AFA</h4>
+                <p class="precio-producto">$27900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/teflon_Amalfi.jpg" alt="Teflón Amalfi">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Teflón Amalfi</h4>
+                <p class="precio-producto">$35800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/teflon_Amalfi_2mts_alto.webp" alt="Teflón Amalfi 2mts alto">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Teflón Amalfi 2mts alto</h4>
+                <p class="precio-producto">$47400</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/teflon_D.I..webp" alt="Teflón D.I.">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Teflón D.I.</h4>
+                <p class="precio-producto">$20000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/teflon_D.I._simil_lino.webp" alt="Teflón D.I. simil lino">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Teflón D.I. simil lino</h4>
+                <p class="precio-producto">$31000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/teflon_digital_Citiblanc.jpg" alt="Teflón digital Citiblanc">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Teflón digital Citiblanc</h4>
+                <p class="precio-producto">$21600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/teflon_mafalda.jpg" alt="Teflón Mafalda">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Teflón Mafalda</h4>
+                <p class="precio-producto">$39500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/cortinas_y_protectores/teflon_simil_lino_Eliplast.webp" alt="Teflón simil lino Eliplast">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Teflón simil lino Eliplast</h4>
+                <p class="precio-producto">$17500</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="ganchos" class="titulo-seccion-principal mb-4" style="font-weight:bold">Ganchos</h3>
+        <div class="row">
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/ganchos/army_D.I..jpg" alt="Army D.I.">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Army D.I.</h4>
+                <p class="precio-producto">$17000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/ganchos/bubbles_Decorinter.jpg" alt="Bubbles Decorinter">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Bubbles Decorinter</h4>
+                <p class="precio-producto">$19500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/ganchos/cadena.jpg" alt="Cadena">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Cadena</h4>
+                <p class="precio-producto">$1100</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/ganchos/cairel_Decorinter.jpg" alt="Cairel Decorinter">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Cairel Decorinter</h4>
+                <p class="precio-producto">$19000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/ganchos/color_Eliplast.jpg" alt="Color Eliplast">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Color Eliplast</h4>
+                <p class="precio-producto">$2900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/ganchos/con_forma_blanco_Eliplast.jpg" alt="Con forma blanco Eliplast">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Con forma blanco Eliplast</h4>
+                <p class="precio-producto">$2800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/ganchos/dorado_y_plateado.jpg" alt="Dorado y plateado">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Dorado y plateado</h4>
+                <p class="precio-producto">$9550</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/ganchos/forma_U_chico.jpg" alt="Forma U chico">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Forma U chico</h4>
+                <p class="precio-producto">$19500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/ganchos/Mafalda.jpg" alt="Mafalda">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Mafalda</h4>
+                <p class="precio-producto">$21400</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/ganchos/petit_table_Decorinter.jpg" alt="Petit table Decorinter">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Petit table Decorinter</h4>
+                <p class="precio-producto">$14800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/ganchos/resina_decoraciones_interior.jpg" alt="Resina decoraciones interior">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Resina decoraciones interior</h4>
+                <p class="precio-producto">$17500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/ganchos/roller.jpg" alt="Roller">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Roller</h4>
+                <p class="precio-producto">$6000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/ganchos/roller_doble.jpg" alt="Roller doble">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Roller doble</h4>
+                <p class="precio-producto">$13500</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="juego" class="titulo-seccion-principal mb-4" style="font-weight:bold">Juego de toalla y toallón</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/juego_de_toalla_y_toallon/arcoiris_detroit.jpg" alt="Arcoiris Detroit 500gr. bolsa PVC">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Arcoiris Detroit 500gr. bolsa PVC</h4>
+                <p class="precio-producto">$42750</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/juego_de_toalla_y_toallon/cannon.jpg" alt="Cannon 520gr.">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Cannon 520gr.</h4>
+                <p class="precio-producto">$32200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/juego_de_toalla_y_toallon/Danubio.jpg" alt="Danubio 400gr.">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Danubio 400gr.</h4>
+                <p class="precio-producto">$18600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/juego_de_toalla_y_toallon/Danubio_jacquard.jpg" alt="Danubio Jacquard 500gr.">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Danubio Jacquard 500gr.</h4>
+                <p class="precio-producto">$31000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/juego_de_toalla_y_toallon/fantasia_guarda_brillo.jpg" alt="Fantasía guarda brillo">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Fantasía guarda brillo</h4>
+                <p class="precio-producto">$22100</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/juego_de_toalla_y_toallon/FV_bordado.webp" alt="Franco Valente bordado">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Franco Valente bordado</h4>
+                <p class="precio-producto">$32200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/juego_de_toalla_y_toallon/FV_liviano.webp" alt="Franco Valente liviano">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Franco Valente liviano</h4>
+                <p class="precio-producto">$25300</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/juego_de_toalla_y_toallon/FV_pesado.webp" alt="Franco Valente pesado">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Franco Valente pesado</h4>
+                <p class="precio-producto">$34700</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/juego_de_toalla_y_toallon/Luke.webp" alt="Luke 450gr. con guarda">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Luke 450gr. con guarda</h4>
+                <p class="precio-producto">$31200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/juego_de_toalla_y_toallon/Palette.jpg" alt="Palette">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Palette</h4>
+                <p class="precio-producto">$29250</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="toallas" class="titulo-seccion-principal mb-4" style="font-weight:bold">Toallas</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallas/rostro_bordada_FV.jpg" alt="De rostro bordada Franco Valente">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">De rostro bordada Franco Valente</h4>
+                <p class="precio-producto">$12900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallas/disney.jpg" alt="Disney">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Disney</h4>
+                <p class="precio-producto">$3000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallas/fantasia_guarda.jpg" alt="Fantasía con guarda brillo">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Fantasía con guarda brillo</h4>
+                <p class="precio-producto">$5750</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallas/FV_bordada_caja.jpg" alt="Franco Valente bordada en caja">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Franco Valente bordada en caja</h4>
+                <p class="precio-producto">$7450</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallas/FV_liviana.jpg" alt="Franco Valente liviana (400gr.)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Franco Valente liviana (400gr.)</h4>
+                <p class="precio-producto">$7300</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallas/FV_pesada.webp" alt="Franco Valente pesada (500gr.)">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Franco Valente pesada (500gr.)</h4>
+                <p class="precio-producto">$8950</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallas/individual.jpg" alt="Individual Franco Valente">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Individual Franco Valente</h4>
+                <p class="precio-producto">$3800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallas/luke_arcoiris.jpg" alt="Luke Arcoiris 450gr.">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Luke Arcoiris 450gr.</h4>
+                <p class="precio-producto">$9800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallas/secado_rapido.jpg" alt="Secado rápido">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Secado rápido</h4>
+                <p class="precio-producto">$3600</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallas/turbante_FV.webp" alt="Turbante Franco Valente">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Turbante Franco Valente</h4>
+                <p class="precio-producto">$12700</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallas/turbante_microfibra.webp" alt="Turbante microfibra en caja">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Turbante microfibra en caja</h4>
+                <p class="precio-producto">$5900</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="toallones" class="titulo-seccion-principal mb-4" style="font-weight:bold">Toallones</h3>
+        <div class="row">
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallones/arcoiris_like.jpg" alt="Arcoiris Luke 450gr.">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Arcoiris Luke 450gr.</h4>
+                <p class="precio-producto">$21350</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallones/fantasia_guarda_brillo.jpg" alt="Fantasía con guarda brillo">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Fantasía con guarda brillo</h4>
+                <p class="precio-producto">$16300</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallones/toallon_liviano_FV.webp" alt="Franco Valente liviano 400gr.">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Franco Valente liviano 400gr.</h4>
+                <p class="precio-producto">$17300</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallones/toallon_pesado_FV.webp" alt="Franco Valente pesado 500gr.">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Franco Valente pesado 500gr.</h4>
+                <p class="precio-producto">$25000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallones/microfibra_citiblanc.jpg" alt="Microfibra Citiblanc Clubes">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Microfibra Citiblanc Clubes</h4>
+                <p class="precio-producto">$18000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallones/playero_estampado.jpg" alt="Playero microfibra estampado">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Playero microfibra estampado</h4>
+                <p class="precio-producto">$9000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallones/playero_infantil.jpg" alt="Playero microfibra infantil">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Playero microfibra infantil</h4>
+                <p class="precio-producto">$8100</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallones/secado_rapido_estampado.jpg" alt="Secado rápido estampado">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Secado rápido estampado</h4>
+                <p class="precio-producto">$10800</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="tarjeta-producto">
+              <div class="imagen-wrap">
+                <img src="img/bano/toallones/secado_rapido_liso.jpg" alt="Secado rápido liso">
+              </div>
+              <div class="info-producto">
+                <h4 class="titulo-producto">Secado rápido liso</h4>
+                <p class="precio-producto">$11700</p>
+              </div>
+            </div>
+          </div>
         </div>
         
       </section>
@@ -97,12 +1730,11 @@
     </div>
   </main>
 
-<!-- Footer adaptable con Grilla -->
+  <!-- Footer -->
   <footer class="pie container-fluid py-5">
     <div class="container">
       <div class="row justify-content-between align-items-start">
 
-        <!-- Redes Sociales -->
         <div class="col-12 col-sm-6 col-md-auto text-center text-md-left mb-4 mb-md-0">
           <div class="redes-sociales d-flex justify-content-center justify-content-md-start align-items-center">
             <a href="https://www.instagram.com/marblanco_munro/reels/" target="_blank" class="mr-3">
@@ -114,7 +1746,6 @@
           </div>
         </div>
 
-        <!-- Categorías -->
         <div class="col-6 col-md-auto mb-4 mb-md-0">
           <div class="columna-pie">
             <h4 class="titulo-seccion">Categorías</h4>
@@ -128,7 +1759,6 @@
           </div>
         </div>
 
-        <!-- Más Información -->
         <div class="col-6 col-md-auto mb-4 mb-md-0">
           <div class="columna-pie">
             <h4 class="titulo-seccion">Más información</h4>
@@ -137,7 +1767,6 @@
           </div>
         </div>
 
-        <!-- Contacto -->
         <div class="col-12 col-md-auto">
           <div class="columna-pie">
             <h4 class="titulo-seccion">Contactános</h4>
@@ -145,10 +1774,12 @@
             <p><a href="https://maps.app.goo.gl/msS1herYSwzdVm8B9" target="_blank" class="direccion">Vélez Sársfield 4377, Vicente López</a></p>
           </div>
         </div>
-
       </div>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>  <script src="recursos/funciones.js"></script>
+
+  <a href="#" id="btn-volver-arriba" class="btn-scroll-top" title="Volver arriba"> ↑ </a>
 </body>
 </html>
